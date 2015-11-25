@@ -13,4 +13,8 @@ public class UtilityClass {
 	private UtilityClass () {
 		throw new AssertionError();
 	}
+	
+	public void test() {
+		System.out.println("Just a test");
+	}
 }
