@@ -2,6 +2,9 @@ package com.chapter.three;
 
 public final class CaseInsensitiveString {
 	private final String s;
+
+//	Lazily init
+	private volatile int hashCode;
 	
 	public CaseInsensitiveString(String s) {
 		if (null == s) 
@@ -17,5 +20,13 @@ public final class CaseInsensitiveString {
 		
 		return o instanceof CaseInsensitiveString && ((CaseInsensitiveString) o).s.equalsIgnoreCase(s);
 	}
+	
+	/**
+	 * 指定toString（） 方法返回的字符串格式
+	 */
+	@Override public String toString() {
+		return String.format("%s", s);
+	}
+	
 	
 }
