@@ -1,6 +1,6 @@
 package com.chapter.three;
 
-public final class CaseInsensitiveString {
+public final class CaseInsensitiveString implements Comparable<CaseInsensitiveString>{
 	private final String s;
 
 //	Lazily init
@@ -26,6 +26,15 @@ public final class CaseInsensitiveString {
 	 */
 	@Override public String toString() {
 		return String.format("%s", s);
+	}
+
+	
+	/**
+	 * 
+	 */
+	public int compareTo(CaseInsensitiveString o) {
+		
+		return 0;
 	}
 	
 	

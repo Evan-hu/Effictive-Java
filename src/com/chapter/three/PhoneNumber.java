@@ -1,6 +1,6 @@
 package com.chapter.three;
 
-public final class PhoneNumber {
+public final class PhoneNumber implements Comparable<PhoneNumber>{
 	private final short areaCode;
 	private final short prefix;
 	private final short lineNumber;
@@ -37,6 +37,23 @@ public final class PhoneNumber {
 		result = 31 *result + areaCode;
 		result = 31 *result + prefix;
 		return result;
+	}
+	
+	/**
+	 * 设置不同类型的比较
+	 */
+	public int compareTo(PhoneNumber o) {
+		if (areaCode < o.areaCode)
+			return -1;
+		if (areaCode > o.areaCode)
+			return 1;
+		
+		//optimize structure
+		int areaCodeDiff = areaCode-o.areaCode;
+		if (0 != areaCodeDiff)
+			return areaCodeDiff;
+		
+		return 0;
 	}
 	
 }
