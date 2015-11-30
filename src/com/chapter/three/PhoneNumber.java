@@ -1,5 +1,9 @@
 package com.chapter.three;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
 public final class PhoneNumber implements Comparable<PhoneNumber>{
 	private final short areaCode;
 	private final short prefix;
@@ -56,4 +60,33 @@ public final class PhoneNumber implements Comparable<PhoneNumber>{
 		return 0;
 	}
 	
+	
+	
+//	设置Set的比较代码,  没有使用原始类型，这样做比较安全，如果换成Set就危险
+		static int numElementsInCommon(Set<?> s1, Set<?> s2) {
+			int result = 0;
+			for (Object o1 : s1)
+				if (s2.contains(o1))
+					result++;
+			return result;
+		}
+		
+//		优先考虑泛型方法
+		static <E> E reduce(List<E> list, Function<E> f, E initval) {
+			List<E> snalshot;
+			synchronized (list) {
+				snalshot = new ArrayList<E>(list);
+			}
+			E result = initval;
+			for (E e: list)
+				result = f.apply(result, e);
+			return result;
+		}
+	
 }
+
+interface Function<T>{
+	T apply(T arg1, T arg2);
+}
+
+
