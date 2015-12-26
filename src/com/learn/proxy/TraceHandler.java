@@ -22,7 +22,7 @@ public class TraceHandler implements InvocationHandler {
 		System.out.println("Target = "+target);
 		// print method name and parameters
 		System.out.println("Method Name = "+method.getName()+ method.getParameters().toString());
-		// invoke actual method
+		// 调用实际的方法
 		return method.invoke(target, args);
 	}
 	
