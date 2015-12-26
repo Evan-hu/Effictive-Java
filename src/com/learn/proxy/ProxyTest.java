@@ -19,6 +19,9 @@ public class ProxyTest {
 			// 无论何时调用代理对象  proxy 的方法， 调用处理器 handler 的 invoke方法都会被调用，
 			// 并向调用处理器  handler 传递 method 对象和原始的调用参数，调用处理器 handler 必须给出处理调用的方式
 			Object proxy = Proxy.newProxyInstance(null, new Class[] {Comparable.class}, handler);
+			
+			// 一个代理类只有一个实例域---调用处理器，所需要的任何附加数据都必须存储在调用处理器中，即 handler中
+			
 			elements[i] = proxy;
 		}
 		
