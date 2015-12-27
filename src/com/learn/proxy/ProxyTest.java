@@ -12,7 +12,7 @@ public class ProxyTest {
 		Object [] elements = new Object[1000];
 		
 		// fill elements with proxies for the integers 1...1000
-		for (int i = 0; i < elements.length; i++) {
+		for (int i = 0; i < elements.length; i++) { 
 			Integer value = i + 1;
 			InvocationHandler handler = new TraceHandler(value);
 			// 创建代理对象， handler 为调用处理器 ， null为 class loader， 中间的为 一个class对象数组，每个元素都是需要实现的接口
