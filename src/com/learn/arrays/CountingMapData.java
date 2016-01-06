@@ -44,6 +44,9 @@ public class CountingMapData extends AbstractMap<Integer, String> {
 	
 
 	@Override
+	/**
+	 * Map.entrySet() 方法必须产生一个MapEntry 对象集
+	 */
 	public Set<java.util.Map.Entry<Integer, String>> entrySet() {
 		Set<Map.Entry<Integer, String>> entries = new LinkedHashSet<Map.Entry<Integer,String>>();
 		for(int i = 0; i < size; i++) 
