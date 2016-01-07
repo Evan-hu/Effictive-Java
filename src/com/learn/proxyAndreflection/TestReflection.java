@@ -14,4 +14,8 @@ public class TestReflection {
 		System.out.println("stringName = " + stringName);
 		System.out.println("int a value = " + a);
 	}
+	
+	public void callMethod(int a) {
+		System.out.println("callMethod the params value a = " + a);
+	}
 }
