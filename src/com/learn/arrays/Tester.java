@@ -2,7 +2,6 @@ package com.learn.arrays;
 
 import java.util.List;
 
-import com.sun.org.apache.xml.internal.security.utils.HelperNodeList;
 
 public class Tester<C> {
 	public static int filedWidth = 8;
